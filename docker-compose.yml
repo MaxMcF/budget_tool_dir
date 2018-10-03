@@ -10,6 +10,7 @@ services:
     restart: always
 
   nginx:
+    restart: always
     build: ./nginx/
     ports:
       - "80:80"
