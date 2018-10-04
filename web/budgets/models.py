@@ -23,6 +23,8 @@ class Budget(models.Model):
 class Transaction(models.Model):
 
     budget = models.ForeignKey(Budget, on_delete=models.CASCADE, related_name='transaction')
+    description = models.CharField(max_length=180, default='No Description')
+    amount = models.FloatField(blank=True, null=True)
     date_uploaded = models.DateField(auto_now_add=True)
     date_modified = models.DateField(auto_now=True)
     STATES = (

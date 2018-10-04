@@ -13,8 +13,10 @@
     <h1 class="page-header">Budget Tool</h1>
     <nav>
       <ul>
-        <li><a href="{% url "home" %}">Home</a></li>
-        <li><a href="{% url "budget_view" %}">Budgets</a></li>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'budget_view' %}">Budgets</a></li>
+        <li><a href="{% url 'budget_new' %}">Create a Budget</a></li>
+        <li><a href="{% url 'transaction_new' %}">Create a Transaction</a></li>
       </ul>
     </nav>
   </header>
