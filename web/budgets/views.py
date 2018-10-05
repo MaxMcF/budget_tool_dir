@@ -26,12 +26,14 @@ class TransactionView(LoginRequiredMixin, DetailView):
     context_object_name = 'transaction'
     login_url = reverse_lazy('login')
     pk_url_kwarg = 'id'
-
+    # queryset = Transaction.objects.all()
     def get_queryset(self):
-        return Transaction.objects.filter(budget__user__username=self.request.user.username)
+        return Transaction.objects.filter(
+            budget__user__username=self.request.user.username)
+
 
 class BudgetCreate(LoginRequiredMixin, CreateView):
-    template_name = 'budgets/budget_create.html'
+    template_name = 'budgets/budgets_create.html'
     model = Budget
     form_class = BudgetForm
     success_url = reverse_lazy('budget_view')

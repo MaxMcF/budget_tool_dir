@@ -23,5 +23,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('', home_view, name='home'),
     path('budget/', include('budgets.urls')),
+    path('api/v1/', include('budget_api.urls'))
 ]
 
