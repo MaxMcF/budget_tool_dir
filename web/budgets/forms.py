@@ -9,4 +9,4 @@ class BudgetForm(ModelForm):
 class TransactionForm(ModelForm):
     class Meta:
         model = Transaction
-        fields = ['budget', 'description', 'amount']
+        fields = ['budget', 'description', 'amount', 'action_type']

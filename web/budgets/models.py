@@ -24,17 +24,17 @@ class Transaction(models.Model):
 
     budget = models.ForeignKey(Budget, on_delete=models.CASCADE, related_name='transaction')
     description = models.CharField(max_length=180, default='No Description')
-    amount = models.FloatField(blank=True, null=True)
+    amount = models.FloatField()
     date_uploaded = models.DateField(auto_now_add=True)
     date_modified = models.DateField(auto_now=True)
-    STATES = (
-        ('DEPOSIT', 'Deposit'),
-        ('WITHDRAWL', 'Withdrawl'),
-    )
     action_type = models.CharField(
         max_length=16,
-        choices=STATES,
+        choices=(
+        ('DEPOSIT', 'Deposit'),
+        ('WITHDRAWL', 'Withdrawl'),
+        ),
     )
+
 
     def __repr__(self):
         return '<Transaction: {}>'.format(self.name)
