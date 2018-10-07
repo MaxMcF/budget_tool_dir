@@ -9,5 +9,4 @@ urlpatterns = [
     path('login', views.obtain_auth_token),
     path('budget', BudgetApiView.as_view(), name='budget-list'),
     path('transaction', TransactionApiView.as_view(), name='transaction-detail'),
-    path()
 ]
