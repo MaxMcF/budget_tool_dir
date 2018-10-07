@@ -31,7 +31,7 @@ class Transaction(models.Model):
         max_length=16,
         choices=(
         ('DEPOSIT', 'Deposit'),
-        ('WITHDRAWL', 'Withdrawl'),
+        ('WITHDRAW', 'Withdraw'),
         ),
     )
 
